@@ -1,8 +1,11 @@
-local lua_uuid = require "lua_uuid"
+package.path = package.path..";./?.lua"
 
-assert(lua_uuid.generate())
+local uuid = require "lua_uuid"
 
-local first = lua_uuid.generate()
-local second = lua_uuid.generate()
+assert(type(uuid) == "function")
+
+local first = uuid()
+local second = uuid()
 
 assert(first ~= second)
+assert(type(uuid()) == "string")
