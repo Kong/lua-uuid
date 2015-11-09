@@ -1,14 +1,14 @@
 # lua_uuid
 
-Lua library that generate UUIDs leveraging libuuid.
+Lua library that generate UUIDs leveraging [libuuid](http://linux.die.net/man/3/libuuid).
 
 ## Usage
 
-To generate an unique UUID string:
+To generate a new UUID string:
 
 ```lua
-local lua_uuid = require "lua_uuid"
-local uuid_str = lua_uuid.generate()
+local uuid = require "lua_uuid"
+local uuid_str = uuid()
 
-print("The UUID is "..uuid_str)
+print("New UUID: "..uuid_str)
 ```
