@@ -1,18 +1,10 @@
-LUA ?= lua5.1
-LUA_PC ?= lua5.1
-LUA_LIBS ?= $(shell pkg-config $(LUA_PC) --libs)
-LUA_CFLAGS = $(shell pkg-config $(LUA_PC) --cflags)
-
-CFLAGS ?= -O2 -Wall -Werror
-
 all: lua_uuid.so
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) -fPIC $(LUA_CFLAGS) -o $@ $<
+lua_uuid.so: lua_uuid.o
+	$(CC) $(LIBFLAG) -luuid -o $@ -L$(LUA_LIBDIR) $<
 
-lua_uuid.so: lua_uuid.o test/lua_uuid_test.lua
-	$(CC) -shared lua_uuid.o $(LUA_LIBS) -luuid -o $@
-	$(LUA) test/lua_uuid_test.lua
+lua_uuid.o: lua_uuid.c
+	$(CC) -c $(CFLAGS) -I$(LUA_INCDIR) $< -o $@
 
 install: lua_uuid.so
 	cp lua_uuid.so $(INST_LIBDIR)

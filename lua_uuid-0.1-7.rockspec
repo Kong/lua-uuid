@@ -1,8 +1,8 @@
 package = "lua_uuid"
-version = "0.1-6"
+version = "0.1-7"
 source = {
-  url = "https://github.com/Mashape/lua-uuid/archive/0.1-6.tar.gz",
-  dir = "lua-uuid-0.1-6"
+  url = "https://github.com/Mashape/lua-uuid/archive/0.1-7.tar.gz",
+  dir = "lua-uuid-0.1-7"
 }
 description = {
   summary = "UUID generation",
@@ -17,6 +17,12 @@ dependencies = {
 }
 build = {
   type = "make",
+  build_variables = {
+    CFLAGS="$(CFLAGS)",
+    LIBFLAG="$(LIBFLAG)",
+    LUA_LIBDIR="$(LUA_LIBDIR)",
+    LUA_INCDIR="$(LUA_INCDIR)"
+  },
   install_variables = {
     INST_LIBDIR = "$(LIBDIR)"
   }
