@@ -1,8 +1,8 @@
 package = "lua_uuid"
-version = "0.1-4"
+version = "0.1-5"
 source = {
-  url = "https://github.com/Mashape/lua-uuid/archive/0.1-4.tar.gz",
-  dir = "lua-uuid-0.1-4"
+  url = "https://github.com/Mashape/lua-uuid/archive/0.1-5.tar.gz",
+  dir = "lua-uuid-0.1-5"
 }
 description = {
   summary = "UUID generation",
@@ -16,10 +16,8 @@ dependencies = {
   "lua >= 5.1"
 }
 build = {
-  type = "builtin",
-  modules = {
-    lua_uuid = {
-      sources = {"lua_uuid.c"},
-    }
+  type = "make",
+  install_variables = {
+    INST_LIBDIR = "$(LIBDIR)"
   }
 }
