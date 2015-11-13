@@ -11,7 +11,7 @@ all: lua_uuid.so
 	$(CC) -c $(CFLAGS) -fPIC $(LUA_CFLAGS) -o $@ $<
 
 lua_uuid.so: lua_uuid.o test/lua_uuid_test.lua
-	$(CC) -shared lua_uuid.o $(LUA_LIBS) -o $@
+	$(CC) -shared lua_uuid.o $(LUA_LIBS) -luuid -o $@
 	$(LUA) test/lua_uuid_test.lua
 
 install: lua_uuid.so
