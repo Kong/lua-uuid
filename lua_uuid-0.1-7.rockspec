@@ -10,7 +10,7 @@ description = {
     This is an utility that leverages libuuid to generate UUID strings
   ]],
   homepage = "https://github.com/Mashape/lua-uuid",
-  license = "MIT" 
+  license = "MIT"
 }
 dependencies = {
   "lua >= 5.1"
@@ -18,6 +18,7 @@ dependencies = {
 build = {
   type = "make",
   build_variables = {
+    LUA="$(LUA)",
     CFLAGS="$(CFLAGS)",
     LIBFLAG="$(LIBFLAG)",
     LUA_LIBDIR="$(LUA_LIBDIR)",
