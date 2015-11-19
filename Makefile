@@ -13,7 +13,7 @@ CFLAGS ?= -O2 -Wall -Werror
 all: lua_uuid.so
 
 lua_uuid.so: lua_uuid.o
-	$(CC) $(LIBFLAG) $(LUA_LIBDIR) $(UUID_LIBDIR) $< -o $@
+	$(CC) $(LIBFLAG) $(LUA_LIBDIR) -o $@ $< $(UUID_LIBDIR)
 	$(LUA) test/lua_uuid_test.lua
 
 %.o: %.c
