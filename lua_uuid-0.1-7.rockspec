@@ -21,8 +21,8 @@ build = {
     LUA="$(LUA)",
     CFLAGS="$(CFLAGS)",
     LIBFLAG="$(LIBFLAG)",
-    LUA_LIBDIR="$(LUA_LIBDIR)",
-    LUA_INCDIR="$(LUA_INCDIR)"
+    LUA_LIBDIR="-L$(LUA_LIBDIR)",
+    LUA_INCDIR="-I$(LUA_INCDIR)"
   },
   install_variables = {
     INST_LIBDIR = "$(LIBDIR)"
