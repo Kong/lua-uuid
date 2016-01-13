@@ -16,15 +16,11 @@ dependencies = {
   "lua >= 5.1"
 }
 build = {
-  type = "make",
-  build_variables = {
-    LUA="$(LUA)",
-    CFLAGS="$(CFLAGS)",
-    LIBFLAG="$(LIBFLAG)",
-    LUA_LIBDIR="-L$(LUA_LIBDIR)",
-    LUA_INCDIR="-I$(LUA_INCDIR)"
-  },
-  install_variables = {
-    INST_LIBDIR = "$(LIBDIR)"
+  type = "builtin",
+  modules = {
+    ["lua_uuid"] = {
+      sources = { "lua_uuid.c" },
+      libraries = { "uuid" },
+    },  
   }
 }
