@@ -1,8 +1,8 @@
 package = "lua_uuid"
-version = "0.1-8"
+version = "0.2.0-0"
 source = {
-  url = "https://github.com/Mashape/lua-uuid/archive/0.1-8.tar.gz",
-  dir = "lua-uuid-0.1-8"
+  url = "https://github.com/Mashape/lua-uuid/archive/0.2.0.tar.gz",
+  tag = "0.2.0"
 }
 description = {
   summary = "UUID generation",
@@ -20,7 +20,7 @@ build = {
   modules = {
     ["lua_uuid"] = {
       sources = { "lua_uuid.c" },
-      libraries = { "uuid" },
-    },  
+      libraries = { "uuid" }
+    }
   }
 }
