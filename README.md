@@ -15,7 +15,7 @@ The `uuid/uuid.h` header must be available in the system `INCLUDE_PATH`, otherwi
 * Debian Linux; Ubuntu
   * `apt-get install uuid-dev`
 * Redhat Linux; CentOS
-  * `yum install libuuid-devel.x86_64`
+  * `yum install libuuid-devel`
 
 
 ## Usage
