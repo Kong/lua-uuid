@@ -1,4 +1,4 @@
-LUA ?= lua5.1
+LUA ?= lua
 LUA_LIBDIR ?= $(shell pkg-config $(LUA) --libs)
 LUA_INCDIR ?= $(shell pkg-config $(LUA) --cflags)
 
